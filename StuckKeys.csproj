@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!--
+      Unity 2020.3 with the Mono scripting backend ships a .NET 4.x-equivalent
+      runtime. net46 is the conventional target for BepInEx 5 plugins on this
+      Unity generation; net472 also works.
+    -->
+    <TargetFramework>net46</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>StuckKeysFix</AssemblyName>
+    <RootNamespace>StuckKeysFix</RootNamespace>
+    <Version>1.0.0</Version>
+    <Description>Fixes Shift (and other modifier keys) getting stuck after toggling the Steam Overlay.</Description>
+
+    <!-- BepInEx plugins must not bring framework reference assemblies along. -->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <!--
+    All references are marked Private=false so they are NOT copied into the
+    build output - BepInEx and the game already provide them at runtime.
+  -->
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>libs\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>libs\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>libs\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>libs\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
