@@ -4,13 +4,12 @@
 
 .NET SDK 4.6 or higher.
 
-Create a `libs` directory.
-Copy `Graveyard Keeper\BepInEx\core\BepInEx.dll` to `libs`.
-Copy from `Graveyard Keeper_Data\Managed` these DLLs to `libs`:
-
-- `UnityEngine.dll`
-- `UnityEngine.CoreModule.dll`
-- `UnityEngine.InputLegacyModule.dll`
+- Create a `libs` directory.
+- Copy `Graveyard Keeper\BepInEx\core\BepInEx.dll` to `libs`.
+- Copy from `Graveyard Keeper_Data\Managed` these DLLs to `libs`:
+  - `UnityEngine.dll`
+  - `UnityEngine.CoreModule.dll`
+  - `UnityEngine.InputLegacyModule.dll`
 
 ## Compilation
 
